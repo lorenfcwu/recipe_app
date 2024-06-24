@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { CreateRecipe, Recipes } from './pages';
 import { Navbar } from './components';
+import './styles/global.css';
 
 function App() {
   // Scroll to top of page when changing routes
@@ -17,15 +18,18 @@ function App() {
   }
 
   return (
-    <div>
-      <Router>
-        <ScrollToTop />
-        <Navbar />
-        <Routes>
-          <Route path='/add-recipe' element={<CreateRecipe />} />
-          <Route path='/all-recipes' element={<Recipes />} />
-        </Routes>
-      </Router>
+    <div className='app'>
+      <div className='main-container'>
+        <Router>
+          <ScrollToTop />
+          <Navbar />
+          <Routes>
+            <Route path='/' element={<CreateRecipe />} />
+            <Route path='/search' element={<CreateRecipe />} />
+            <Route path='/recipes' element={<Recipes />} />
+          </Routes>
+        </Router>
+      </div>
     </div>
   );
 }

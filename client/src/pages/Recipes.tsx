@@ -23,12 +23,12 @@ const Recipes = () => {
     <div>
       {backendData.map((recipe: Recipe, key: number) => {
         return (
-          <>
+          <div key={recipe.id}>
             <h1>{recipe.id}</h1>
             <h2>{recipe.recipe_name}</h2>
             <p>{recipe.ingredients}</p>
             <p>{recipe.instructions}</p>
-          </>
+          </div>
         );
       })}
     </div>

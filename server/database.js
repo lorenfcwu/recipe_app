@@ -2,7 +2,7 @@ import mysql from 'mysql2';
 import dotenv from 'dotenv';
 dotenv.config();
 
-const pool = mysql
+const db = mysql
   .createPool({
     host: process.env.MYSQL_HOST,
     user: process.env.MYSQL_USER,
@@ -13,12 +13,12 @@ const pool = mysql
 
 export async function getRecipes() {
   //destructuring
-  const [rows] = await pool.query('SELECT * FROM recipe');
+  const [rows] = await db.query('SELECT * FROM recipe');
   return rows;
 }
 
 export async function getRecipeByID(id) {
-  const [row] = await pool.query(
+  const [row] = await db.query(
     `
   SELECT * 
   FROM recipe
@@ -30,7 +30,7 @@ export async function getRecipeByID(id) {
 }
 
 export async function createRecipe(name, ingredients, instructions) {
-  const [result] = await pool.query(
+  const [result] = await db.query(
     `
   INSERT INTO recipe (recipe_name, ingredients, instructions)
   VALUES (?, ?, ?)`,

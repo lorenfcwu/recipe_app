@@ -1,9 +1,11 @@
 import express from 'express';
+import bodyParser from 'body-parser';
 
 import { getRecipes, getRecipeByID, createRecipe } from './database.js';
 
 const app = express();
 
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.get('/recipe', async (req, res) => {

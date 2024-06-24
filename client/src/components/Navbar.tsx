@@ -1,11 +1,46 @@
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import '../styles/navbar.css';
+import { IconContext } from 'react-icons';
+import * as FaIcons6 from 'react-icons/fa6';
+import { useMediaQuery } from 'react-responsive';
+import Sidebar from './Sidebar';
 
 const Navbar = () => {
+  const [sidebar, setSidebar] = useState<boolean>(true);
+  const isSmallScreen = useMediaQuery({ query: '(max-width: 1224px)' });
+
+  const showSidebar = () => {
+    setSidebar(!sidebar);
+  };
+
   return (
-    <div>
-      <Link to='/add-recipe'> Add a Recipe </Link>
-      <Link to='/all-recipes'> Recipes </Link>
-    </div>
+    <>
+      {isSmallScreen && (
+        <>
+          <IconContext.Provider value={{ color: 'black' }}>
+            <div className='navbar-container'>
+              <div className='navbar'>
+                <Link to='#' className='menu-bars'>
+                  <FaIcons6.FaBars onClick={showSidebar} />
+                </Link>
+              </div>
+
+              <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
+                <ul className='nav-menu-content'>
+                  <li className='nav-toggle'>
+                    <Link to='#' className='menu-bars'>
+                      <FaIcons6.FaX onClick={showSidebar} />
+                    </Link>
+                  </li>
+                  <Sidebar />
+                </ul>
+              </nav>
+            </div>
+          </IconContext.Provider>
+        </>
+      )}
+    </>
   );
 };
 
