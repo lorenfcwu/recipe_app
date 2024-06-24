@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { CreateRecipe, Recipes } from './pages';
 import { Navbar } from './components';
-import './styles/global.css';
+import './assets/styles/global.css';
 
 function App() {
   // Scroll to top of page when changing routes
@@ -25,8 +25,8 @@ function App() {
           <Navbar />
           <Routes>
             <Route path='/' element={<CreateRecipe />} />
-            <Route path='/search' element={<CreateRecipe />} />
             <Route path='/recipes' element={<Recipes />} />
+            <Route path='/search' element={<CreateRecipe />} />
           </Routes>
         </Router>
       </div>

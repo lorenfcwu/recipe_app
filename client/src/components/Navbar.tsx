@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import '../styles/navbar.css';
+import '../assets/styles/navbar.css';
 import { IconContext } from 'react-icons';
 import * as FaIcons6 from 'react-icons/fa6';
 import { useMediaQuery } from 'react-responsive';
 import Sidebar from './Sidebar';
+import logo from '../assets/images/recipe-app-logo.png';
 
 const Navbar = () => {
   const [sidebar, setSidebar] = useState<boolean>(true);
@@ -24,6 +25,7 @@ const Navbar = () => {
                 <Link to='#' className='menu-bars'>
                   <FaIcons6.FaBars onClick={showSidebar} />
                 </Link>
+                <img src={logo} alt='logo' className='logo' />
               </div>
 
               <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
