@@ -1,5 +1,5 @@
-.sidebar-menu {
-  background-color: #edf2fb;
+.sidebar-container {
+  background-color: white;
   width: 260px;
   height: 100vh;
   display: grid;
@@ -7,11 +7,14 @@
   align-content: space-between;
   position: fixed;
   top: 0;
-  z-index: 5;
+}
+
+.container {
+  width: 260px;
+  height: 100vh;
 }
 
 .sidebar-logo {
-  /* padding: 8px 16px; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -25,54 +28,7 @@
   width: auto;
 }
 
-.header {
-  /* background-color: #edf2fb; */
-  height: 90px;
-  width: 100%;
-  /* max-width: 1500px; */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky;
-  z-index: 4;
-}
-
-.menu-bars {
-  margin-left: 2rem;
-  font-size: 1rem;
-  background: none;
-}
-
-.sidebar-object {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 8px 16px;
-  list-style: none;
-  height: 55px;
-}
-
-.sidebar-object a {
-  text-decoration: none;
-  color: black;
-  font-size: 22px;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  padding: 0px 16px;
-  border-radius: 4px;
-}
-
-.sidebar-object a:hover {
-  background-color: #abc4ff;
-}
-
-.sidebar-object span {
-  margin-left: 16px;
-}
-
-.sidebar-menu-content {
+.sidebar-content-container {
   width: 260px;
 }
 
@@ -89,45 +45,55 @@
 
 @media screen and (max-width: 768px) {
   .header {
-    background-color: #edf2fb;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    background-color: white;
   }
 
-  .sidebar-menu {
-    background-color: #edf2fb;
+  .header-logo {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+  }
+  .sidebar-container {
     width: 220px;
-    height: 100vh;
-    display: grid;
     justify-content: start;
-    position: fixed;
-    top: 0;
     left: -100%;
     transition: 850ms;
-    z-index: 5;
   }
 
-  .sidebar-menu.active {
+  .sidebar-container.active {
     left: 0;
     transition: 350ms;
-    width: 220px;
   }
 
-  .sidebar-menu-content {
+  .sidebar-content-container {
     width: 220px;
   }
 
   .sidebar-toggle {
-    background-color: #edf2fb;
+    /* background-color: #edf2fb; */
     width: 100%;
-    height: 90px;
+    height: 100px;
     display: flex;
     justify-content: start;
     align-items: center;
   }
 
   .logo {
-    height: 90px;
+    height: 84px;
     width: auto;
-    padding: 5px 0px;
-    margin-right: 2rem;
+    margin: 7px 3px 7px 0px;
+  }
+
+  .sidebar-toggle-icon {
+    margin-left: 2rem;
+    font-size: 1rem;
+    background: none;
+    position: fixed;
   }
 }

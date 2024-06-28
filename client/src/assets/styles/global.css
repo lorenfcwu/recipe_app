@@ -3,3 +3,13 @@
   margin: 0;
   padding: 0;
 }
+
+.main-container {
+  height: 100vh;
+  width: auto;
+  background-color: #abc4ff;
+  background-image: linear-gradient(60deg, #71a5de 0%, #edf2fb 100%);
+  background-size: 100%;
+  background-position: center;
+  background-attachment: fixed;
+}

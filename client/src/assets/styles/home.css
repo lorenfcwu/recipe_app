@@ -1,0 +1,23 @@
+.home-header-container {
+  display: flex;
+  height: 370px;
+  width: 100%;
+}
+
+.home-content-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  height: 100vh;
+  width: 100%;
+  background-color: white;
+}
+
+@media screen and (max-width: 768px) {
+  .home-header-container {
+    height: 400px;
+  }
+
+  .home-content-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import * as FaIcons6 from 'react-icons/fa6';
 import logo from '../assets/images/recipe-app-logo.png';
-import '../assets/styles/navbar.css';
 
 interface Props {
   mobileScreen: boolean;
@@ -13,11 +12,15 @@ const Header = ({ mobileScreen, toggleSidebar }: Props) => {
     <>
       <div className='header'>
         {mobileScreen && (
-          <Link to='#' className='menu-bars'>
-            <FaIcons6.FaBars onClick={toggleSidebar} />
-          </Link>
+          <>
+            <Link to='#' className='sidebar-toggle-icon'>
+              <FaIcons6.FaBars onClick={toggleSidebar} />
+            </Link>
+            <div className='header-logo'>
+              <img src={logo} alt='logo' className='logo' />
+            </div>
+          </>
         )}
-        <img src={logo} alt='logo' className='logo' />
       </div>
     </>
   );

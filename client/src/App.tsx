@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import { CreateRecipe, Recipes } from './pages';
+import { Home, CreateRecipe, Recipes } from './pages';
 import './assets/styles/global.css';
 
 function App() {
@@ -22,7 +22,7 @@ function App() {
         <Router>
           <ScrollToTop />
           <Routes>
-            <Route path='/' element={<CreateRecipe />} />
+            <Route path='/' element={<Home />} />
             <Route path='/recipes' element={<Recipes />} />
             <Route path='/search' element={<CreateRecipe />} />
           </Routes>
