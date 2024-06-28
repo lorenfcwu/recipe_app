@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { CreateRecipe, Recipes } from './pages';
-import { Navbar } from './components';
 import './assets/styles/global.css';
 
 function App() {
@@ -22,7 +21,6 @@ function App() {
       <div className='main-container'>
         <Router>
           <ScrollToTop />
-          <Navbar />
           <Routes>
             <Route path='/' element={<CreateRecipe />} />
             <Route path='/recipes' element={<Recipes />} />

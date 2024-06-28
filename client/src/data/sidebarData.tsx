@@ -6,18 +6,18 @@ export const sidebarData = [
     title: 'Home',
     path: '/',
     icon: <AiIcons.AiFillHome />,
-    cName: 'nav-object',
+    cName: 'sidebar-object',
   },
   {
     title: 'Recipes',
     path: '/recipes',
     icon: <AiIcons.AiFillBook />,
-    cName: 'nav-object',
+    cName: 'sidebar-object',
   },
   {
     title: 'Search',
     path: '/search',
     icon: <FaIcons.FaSearch />,
-    cName: 'nav-object',
+    cName: 'sidebar-object',
   },
 ];

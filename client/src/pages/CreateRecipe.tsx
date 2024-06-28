@@ -1,6 +1,7 @@
 import { useForm } from 'react-hook-form';
 import { useState } from 'react';
 import Axios from 'axios';
+import { SectionWrapper } from '../components';
 
 const CreateRecipe = () => {
   const { register, handleSubmit } = useForm();
@@ -23,25 +24,29 @@ const CreateRecipe = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <input
-        type='text'
-        placeholder='Recipe Name'
-        {...register('recipe_name')}
-        onChange={(text) => {
-          setRecipeName(text.target.value);
-        }}
-      />
-      <input
-        type='text'
-        placeholder='Ingredients'
-        {...register('ingredients')}
-        onChange={(text) => {
-          setRecipeIngredients(text.target.value);
-        }}
-      />
-      <input type='submit' />
-    </form>
+    <>
+      <SectionWrapper title='Create a Recipe'>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <input
+            type='text'
+            placeholder='Recipe Name'
+            {...register('recipe_name')}
+            onChange={(text) => {
+              setRecipeName(text.target.value);
+            }}
+          />
+          <input
+            type='text'
+            placeholder='Ingredients'
+            {...register('ingredients')}
+            onChange={(text) => {
+              setRecipeIngredients(text.target.value);
+            }}
+          />
+          <input type='submit' />
+        </form>
+      </SectionWrapper>
+    </>
   );
 };
 

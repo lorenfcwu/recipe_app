@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { SectionWrapper } from '../components';
 
 interface Recipe {
   id: number;
@@ -20,18 +21,20 @@ const Recipes = () => {
   }, []);
 
   return (
-    <div>
-      {backendData.map((recipe: Recipe, key: number) => {
-        return (
-          <div key={recipe.id}>
-            <h1>{recipe.id}</h1>
-            <h2>{recipe.recipe_name}</h2>
-            <p>{recipe.ingredients}</p>
-            <p>{recipe.instructions}</p>
-          </div>
-        );
-      })}
-    </div>
+    <SectionWrapper title='All Recipes'>
+      <div>
+        {backendData.map((recipe: Recipe, key: number) => {
+          return (
+            <div key={recipe.id}>
+              <h1>{recipe.id}</h1>
+              <h2>{recipe.recipe_name}</h2>
+              <p>{recipe.ingredients}</p>
+              <p>{recipe.instructions}</p>
+            </div>
+          );
+        })}
+      </div>
+    </SectionWrapper>
   );
 };
 
