@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import '../assets/styles/navbar.css';
 import '../assets/styles/sectionWrapper.css';
 import '../assets/styles/sidebarMenu.css';

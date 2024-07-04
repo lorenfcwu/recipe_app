@@ -14,7 +14,7 @@
   border-radius: 50%;
   left: -40px; */
   position: absolute;
-  left: -34px;
+  left: -32px;
   width: 0;
   height: 0;
   border-top: 45px solid transparent;
@@ -31,14 +31,12 @@
   width: 185px;
 }
 
-.sidebar-object.active a {
+.sidebar-object a.active {
   background-color: #d7e3fc;
 }
 
-.sidebar-object.active + .sidebar-menu-selector {
-  /* for circle*/
-  /* background-color: #abc4ff; */
-  border-left: 50px solid #abc4ff;
+li:has(> a.active) + .sidebar-menu-selector {
+  border-left: 50px solid #d7e3fc;
 }
 
 .sidebar-object a {
