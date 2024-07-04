@@ -1,12 +1,18 @@
 import { useForm } from 'react-hook-form';
 import { useState } from 'react';
 import Axios from 'axios';
-import { SectionWrapper } from '../components';
+import { Form, SectionWrapper } from '../components';
 
 const CreateRecipe = () => {
   const { register, handleSubmit } = useForm();
   const [recipeName, setRecipeName] = useState<string>('');
   const [recipeIngredients, setRecipeIngredients] = useState<string>('');
+  const [listItems, setListItems] = useState<Item[]>([]);
+
+  interface Item {
+    name: string;
+    id: number;
+  }
 
   const onSubmit = () => {
     Axios.post('/recipe', {
@@ -45,6 +51,7 @@ const CreateRecipe = () => {
           />
           <input type='submit' />
         </form>
+        <Form listItems={listItems} setListItems={setListItems} />
       </SectionWrapper>
     </>
   );

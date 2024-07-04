@@ -8,13 +8,13 @@ export const sidebarData = [
     icon: <AiIcons.AiFillHome />,
   },
   {
-    title: 'Recipes',
-    path: '/recipes',
-    icon: <AiIcons.AiFillBook />,
-  },
-  {
     title: 'Search',
     path: '/search',
     icon: <FaIcons.FaSearch />,
+  },
+  {
+    title: 'Recipes',
+    path: '/recipes',
+    icon: <AiIcons.AiFillBook />,
   },
 ];

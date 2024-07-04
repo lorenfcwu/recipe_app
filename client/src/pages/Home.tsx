@@ -5,9 +5,11 @@ const Home = () => {
   return (
     <SectionWrapper>
       <div className='home-header-container'>
-        <div className='search-form-placeholder'></div>
+        <div className='text-form-placeholder'></div>
       </div>
-      <div className='home-content-container'></div>
+      <div className='home-content-container'>
+        <div className='featured-recipes-container'></div>
+      </div>
     </SectionWrapper>
   );
 };

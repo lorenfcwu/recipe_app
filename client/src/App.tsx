@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import { Home, CreateRecipe, Recipes } from './pages';
+import { Home, Search, Recipes } from './pages';
 import './assets/styles/global.css';
 
 function App() {
@@ -24,7 +24,7 @@ function App() {
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/recipes' element={<Recipes />} />
-            <Route path='/search' element={<CreateRecipe />} />
+            <Route path='/search' element={<Search />} />
           </Routes>
         </Router>
       </div>
