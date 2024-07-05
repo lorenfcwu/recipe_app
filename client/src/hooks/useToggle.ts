@@ -7,7 +7,7 @@ const useToggle = (initialVal = false) => {
     setState(!state);
   };
 
-  return [state, toggle];
+  return { state, toggle };
 };
 
 export default useToggle;
