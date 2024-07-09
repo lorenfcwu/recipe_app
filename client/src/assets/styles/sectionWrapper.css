@@ -1,5 +1,17 @@
-@media screen and (min-width: 769px) {
+.section-outer {
+  height: 100%;
+}
+
+.section-content {
+  display: flex;
+  flex-direction: column;
+  margin-left: 260px;
+  align-items: center;
+  height: 100%;
+}
+
+@media screen and (max-width: 768px) {
   .section-content {
-    margin-left: 260px;
+    margin-left: 0px;
   }
 }

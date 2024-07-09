@@ -53,6 +53,8 @@ li:has(> a.active) + .sidebar-menu-selector {
 
 .sidebar-object a:hover {
   background-color: #aecbeb;
+  font-weight: 500;
+  transition: 10ms;
 }
 
 .sidebar-object span {

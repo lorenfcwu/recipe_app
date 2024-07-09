@@ -1,0 +1,23 @@
+.item-object {
+  display: flex;
+  justify-content: space-between;
+  min-height: 30px;
+  max-height: 30px;
+  align-items: flex-start;
+  padding-right: 6px;
+}
+
+.item-object span {
+  font-weight: bold;
+}
+
+.item-object button {
+  border: none;
+  font-size: 1.25rem;
+  background-color: transparent;
+}
+
+.item-object button:hover {
+  color: #1557c0;
+  transition: 100ms;
+}

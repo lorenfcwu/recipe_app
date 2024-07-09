@@ -41,6 +41,8 @@
 
 .credits:hover {
   color: #abc4ff;
+  font-weight: 600;
+  transition: 10ms;
 }
 
 @media screen and (max-width: 768px) {

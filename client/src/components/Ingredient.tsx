@@ -1,3 +1,6 @@
+import '../assets/styles/ingredient.css';
+import * as IoIcons from 'react-icons/io5';
+
 interface Props {
   name: string;
   id: number;
@@ -7,8 +10,10 @@ interface Props {
 const Ingredient = ({ name, id, deleteItem }: Props) => {
   return (
     <div className='item-object'>
-      <h1>{name}</h1>
-      <button onClick={() => deleteItem(id)}>X</button>
+      <span>{name}</span>
+      <button onClick={() => deleteItem(id)}>
+        <IoIcons.IoCloseCircle />
+      </button>
     </div>
   );
 };

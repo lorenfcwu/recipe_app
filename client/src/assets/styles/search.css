@@ -1,23 +1,24 @@
-.home-header-container {
+.search-header-container {
   display: flex;
   min-height: 340px;
   width: 100%;
+  justify-content: center;
 }
 
-.home-content-container {
+.search-body-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  height: 100vh;
+  height: 100%;
   width: 100%;
   background-color: white;
 }
 
 @media screen and (max-width: 768px) {
-  .home-header-container {
+  .search-header-container {
     height: 400px;
   }
 
-  .home-content-container {
+  .search-body-container {
     grid-template-columns: repeat(3, 1fr);
   }
 }
