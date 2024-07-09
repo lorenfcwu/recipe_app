@@ -29,14 +29,16 @@
   list-style: none;
   height: 55px;
   width: 185px;
+  font-weight: 500;
 }
 
 .sidebar-object a.active {
-  background-color: #d7e3fc;
+  background-color: #77b6fb;
+  font-weight: 600;
 }
 
 li:has(> a.active) + .sidebar-menu-selector {
-  border-left: 50px solid #d7e3fc;
+  border-left: 50px solid #77b6fb;
 }
 
 .sidebar-object a {
@@ -52,9 +54,9 @@ li:has(> a.active) + .sidebar-menu-selector {
 }
 
 .sidebar-object a:hover {
-  background-color: #aecbeb;
-  font-weight: 500;
-  transition: 10ms;
+  background-color: #4b9cf9;
+  font-weight: 600;
+  transition: 50ms;
 }
 
 .sidebar-object span {

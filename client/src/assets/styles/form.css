@@ -97,7 +97,6 @@
 
 .form-filter-container > .form-button {
   width: 100%;
-  margin-left: 12px;
   font-weight: 500;
   font-size: 1rem;
 }
@@ -131,6 +130,7 @@
   background: transparent;
   border: none;
   font-size: 1.3rem;
+  padding: 0px 12px 0px 4px;
 }
 
 hr {
