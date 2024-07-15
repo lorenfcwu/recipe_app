@@ -7,10 +7,19 @@
 
 .search-body-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   height: 100%;
   width: 100%;
-  background-color: white;
+  background-color: #f8f9fa;
+  align-items: center;
+  justify-items: center;
+  padding: 60px 120px;
+}
+
+@media screen and (max-width: 1430px) {
+  .search-body-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 @media screen and (max-width: 768px) {
