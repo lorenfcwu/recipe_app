@@ -21,3 +21,9 @@
   color: #1557c0;
   transition: 100ms;
 }
+
+@media (max-width: 1224px) {
+  .item-object span {
+    font-size: 0.9rem;
+  }
+}

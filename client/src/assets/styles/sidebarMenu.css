@@ -6,13 +6,6 @@
 }
 
 .sidebar-menu-selector {
-  /* for circle */
-  /* position: absolute;
-  height: 40px;
-  width: 50px;
-  background-color: white;
-  border-radius: 50%;
-  left: -40px; */
   position: absolute;
   left: -32px;
   width: 0;
@@ -42,7 +35,6 @@ li:has(> a.active) + .sidebar-menu-selector {
 }
 
 .sidebar-object a {
-  text-decoration: none;
   color: black;
   font-size: 22px;
   width: 100%;
@@ -61,4 +53,32 @@ li:has(> a.active) + .sidebar-menu-selector {
 
 .sidebar-object span {
   margin-left: 16px;
+}
+
+@media screen and (max-width: 1024px) {
+  .sidebar-menu-selector {
+    left: -35px;
+  }
+
+  .sidebar-object {
+    height: 50px;
+    width: 155px;
+    font-weight: 500;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .sidebar-menu-selector {
+    left: -36px;
+  }
+
+  .sidebar-object {
+    height: 45px;
+    width: 145px;
+    font-weight: 500;
+  }
+
+  .sidebar-object a {
+    font-size: 19px;
+  }
 }

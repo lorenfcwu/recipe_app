@@ -16,9 +16,29 @@
   padding: 60px 120px;
 }
 
-@media screen and (max-width: 1430px) {
+@media screen and (max-width: 1600px) {
   .search-body-container {
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 1320px) {
+  .search-body-container {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 60px 100px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .search-body-container {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 60px 80px;
+  }
+}
+
+@media screen and (max-width: 880px) {
+  .search-body-container {
+    padding: 60px 55px;
   }
 }
 

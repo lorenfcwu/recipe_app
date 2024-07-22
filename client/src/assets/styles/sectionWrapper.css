@@ -10,6 +10,18 @@
   height: 100%;
 }
 
+@media screen and (max-width: 1024px) {
+  .section-content {
+    margin-left: 220px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .section-content {
+    margin-left: 200px;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .section-content {
     margin-left: 0px;
