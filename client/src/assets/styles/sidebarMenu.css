@@ -49,6 +49,8 @@ li:has(> a.active) + .sidebar-menu-selector {
   background-color: #4b9cf9;
   font-weight: 600;
   transition: 50ms;
+  text-shadow: 1px 1px 0px #808080;
+  transform: translateY(-2px);
 }
 
 .sidebar-object span {

@@ -5,3 +5,4 @@ export { default as SidebarMenu } from './SidebarMenu';
 export { default as Form } from './Form';
 export { default as Ingredient } from './Ingredient';
 export { default as RecipeCard } from './RecipeCard';
+export { default as Title } from './Title';

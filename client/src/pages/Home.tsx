@@ -1,11 +1,11 @@
-import { SectionWrapper } from '../components';
+import { SectionWrapper, Title } from '../components';
 import '../assets/styles/home.css';
 
 const Home = () => {
   return (
     <SectionWrapper>
       <div className='home-header-container'>
-        <div className='text-form-placeholder'></div>
+        <Title />
       </div>
       <div className='home-content-container'>
         <div className='featured-recipes-container'></div>
