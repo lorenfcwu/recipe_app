@@ -10,3 +10,12 @@
   font-weight: 600;
   text-shadow: 1px 1px 0px #808080, 2px 2px 0px #999999, 3px 3px 0px #aaaaaa;
 }
+
+@media (max-width: 576px) {
+  .title-container {
+    padding: 10px 15px;
+  }
+  .title-container h1 {
+    font-size: 2.5rem;
+  }
+}

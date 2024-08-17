@@ -1,4 +1,4 @@
-import { SectionWrapper, Title } from '../components';
+import { SectionWrapper, Title, Landing } from '../components';
 import '../assets/styles/home.css';
 
 const Home = () => {
@@ -8,7 +8,7 @@ const Home = () => {
         <Title />
       </div>
       <div className='home-content-container'>
-        <div className='featured-recipes-container'></div>
+        <Landing />
       </div>
     </SectionWrapper>
   );

@@ -1,0 +1,33 @@
+p {
+  margin-bottom: 15px;
+  margin-top: 5px;
+}
+
+.landing-container {
+  max-width: 1150px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0px 15px;
+  margin-top: 5vh;
+}
+
+@media (max-width: 900px) {
+  .landing-container {
+    max-width: 880px;
+    margin-top: 2vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .landing-container {
+    max-width: 720px;
+    margin-top: 5vh;
+  }
+}
+
+@media (max-width: 576px) {
+  .landing-container {
+    max-width: 540px;
+  }
+}
