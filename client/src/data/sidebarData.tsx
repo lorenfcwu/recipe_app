@@ -12,9 +12,4 @@ export const sidebarData = [
     path: '/search',
     icon: <FaIcons.FaSearch />,
   },
-  {
-    title: 'Recipes',
-    path: '/recipes',
-    icon: <AiIcons.AiFillBook />,
-  },
 ];

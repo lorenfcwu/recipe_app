@@ -46,7 +46,7 @@ const Form = ({ listItems, setListItems }: Props) => {
         </div>
 
         <div className='items-container'>
-          <h2>Ingredients: </h2>
+          <h2>Options: </h2>
           <div className='items-list'>
             {listIngredients.map((item: Item) => {
               return <Ingredient name={item.name} id={item.id} deleteItem={deleteItem} />;
