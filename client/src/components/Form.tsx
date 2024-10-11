@@ -1,12 +1,15 @@
 import { SetStateAction, Dispatch } from 'react';
-import { Ingredient } from './index';
+import { Ingredient, AutocompleteText } from './index';
 import { useFormInput, useFormAddDelete } from '../hooks';
 import '../assets/styles/form.css';
-import * as IoIcons from 'react-icons/io5';
+import axios from 'axios';
+// import * as IoIcons from 'react-icons/io5';
 
 interface Props {
   listItems: Item[];
   setListItems: Dispatch<SetStateAction<Item[]>>;
+  recipes: any[];
+  setRecipes: Dispatch<SetStateAction<any[]>>;
 }
 
 export interface Item {
@@ -14,13 +17,48 @@ export interface Item {
   id: number;
 }
 
-const Form = ({ listItems, setListItems }: Props) => {
+const Form = ({ listItems, setListItems, recipes, setRecipes }: Props) => {
   const ingredient = useFormInput('');
-  const {
-    handleSubmit: addIngredient,
-    handleDelete: deleteItem,
-    listValues: listIngredients,
-  } = useFormAddDelete(ingredient.value, listItems, setListItems);
+  const { handleDelete: deleteItem, listValues: listIngredients } = useFormAddDelete(ingredient.value, listItems, setListItems);
+
+  /**
+   * builds the search url to be called to forkify api
+   * @param ingredient the ingredient to be queried on
+   */
+  const buildSearchURL = (ingredient: string): string => {
+    return `https://forkify-api.herokuapp.com/api/v2/recipes?search=${encodeURIComponent(ingredient)}`;
+  };
+
+  const fetchRecipes = async () => {
+    const allRecipes: any[] = [];
+    console.log('fetching!!!!!');
+
+    try {
+      const promises = listIngredients.map((ingredient) => {
+        console.log(`TRYING TO SEARCH FOR ${ingredient.name}`);
+        const searchURL = buildSearchURL(ingredient.name);
+        console.log(`searchURL is ${searchURL}`);
+        return axios.get(searchURL);
+      });
+
+      const results = await Promise.all(promises);
+
+      results.forEach((response) => {
+        const data = response.data;
+        if (data.data.recipes) {
+          allRecipes.push(...data.data.recipes);
+        }
+      });
+
+      const uniqueRecipes = Array.from(new Set(allRecipes.map((recipe) => recipe.id))).map((id) =>
+        allRecipes.find((recipe) => recipe.id === id)
+      );
+
+      setRecipes(uniqueRecipes);
+    } catch (err) {
+      console.error('Error fetching recipes: ', err);
+    }
+  };
 
   return (
     <div className='form-container'>
@@ -29,19 +67,16 @@ const Form = ({ listItems, setListItems }: Props) => {
       </div>
       <hr />
       <div className='form-body-container'>
-        {/* equivalent to value={ingredient.value} onChange={ingredient.onChange} due to naming of fields*/}
         <div className='form-search-container'>
-          <div className='form-input-container'>
-            <input type='text' {...ingredient} />
-            <button className='form-button' onClick={addIngredient}>
-              Add Item
-            </button>
-          </div>
+          <AutocompleteText listItems={listItems} setListItems={setListItems} />
           <div className='form-filter-container'>
-            <button className='filter-search'>
+            {/* to be added later with filter functionality */}
+            {/* <button className='filter-search'>
               <IoIcons.IoFilter />
+            </button> */}
+            <button className='form-button' onClick={fetchRecipes}>
+              Search
             </button>
-            <button className='form-button'>Search</button>
           </div>
         </div>
 

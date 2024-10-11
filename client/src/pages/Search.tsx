@@ -8,6 +8,7 @@ import img4 from '../assets/images/sauteed-pasta-with-lobster-103190.jpg';
 
 const CreateRecipe = () => {
   const [listItems, setListItems] = useState<Item[]>([]);
+  const [recipes, setRecipes] = useState<any[]>([]);
 
   interface Item {
     name: string;
@@ -18,14 +19,12 @@ const CreateRecipe = () => {
     <>
       <SectionWrapper>
         <div className='search-header-container'>
-          {' '}
-          <Form listItems={listItems} setListItems={setListItems} />{' '}
+          <Form listItems={listItems} setListItems={setListItems} recipes={recipes} setRecipes={setRecipes} />
         </div>
         <div className='search-body-container'>
-          <RecipeCard image={img} title='Zucchini Pizza Crust with Lemony Pea Pesto' id={1} />
-          <RecipeCard image={img2} title='Zucchini Frittata with Blossoms' id={1} />
-          <RecipeCard image={img3} title='Zucchini-Lentil Fritters With Lemony Yogurt' id={1} />
-          <RecipeCard image={img4} title='Sauteed Pasta with Lobster' id={1} />
+          {recipes.map((recipe) => (
+            <RecipeCard image={recipe.image_url} title={recipe.title} id={recipe.id} />
+          ))}
         </div>
       </SectionWrapper>
     </>
