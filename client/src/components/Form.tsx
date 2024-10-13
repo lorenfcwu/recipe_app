@@ -31,13 +31,10 @@ const Form = ({ listItems, setListItems, recipes, setRecipes }: Props) => {
 
   const fetchRecipes = async () => {
     const allRecipes: any[] = [];
-    console.log('fetching!!!!!');
 
     try {
       const promises = listIngredients.map((ingredient) => {
-        console.log(`TRYING TO SEARCH FOR ${ingredient.name}`);
         const searchURL = buildSearchURL(ingredient.name);
-        console.log(`searchURL is ${searchURL}`);
         return axios.get(searchURL);
       });
 
