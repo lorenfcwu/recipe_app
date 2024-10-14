@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import { Home, Search, Recipes } from './pages';
+import { Home, Search } from './pages';
 import './assets/styles/global.css';
 
 function App() {

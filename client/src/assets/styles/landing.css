@@ -1,6 +1,13 @@
 p {
   margin-bottom: 15px;
   margin-top: 5px;
+
+  & mark {
+    font-weight: 900;
+    background-color: none;
+    color: #4b9cf9;
+    background: transparent;
+  }
 }
 
 .landing-container {
@@ -10,6 +17,21 @@ p {
   margin-right: auto;
   padding: 0px 15px;
   margin-top: 5vh;
+}
+
+.landing-tutorial-container {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+
+  & img {
+    max-height: 300px;
+    margin: 10px 0 40px 70px;
+  }
+
+  & div {
+    flex-direction: row;
+  }
 }
 
 @media (max-width: 900px) {

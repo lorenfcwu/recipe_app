@@ -1,5 +1,4 @@
 import '../assets/styles/recipeCard.css';
-import axios from 'axios';
 
 interface Props {
   image: string;

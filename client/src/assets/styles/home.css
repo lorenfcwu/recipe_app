@@ -7,7 +7,7 @@
 }
 
 .home-content-container {
-  height: 100vh;
+  overflow: auto;
   width: 100%;
   background-color: #f8f9fa;
 }
